@@ -6,7 +6,8 @@ if (form) {
     const status = form.querySelector(".form-status");
     const name = new FormData(form).get("firstName") || "there";
 
-    status.textContent = `Thanks, ${name}. Your Legacy Block quote request is ready for review.`;
+    status.textContent = `Thanks, ${name}. Continue below to complete the material quote.`;
+    document.getElementById("legacy-estimator")?.scrollIntoView({ behavior: "smooth" });
     form.reset();
   });
 }
@@ -118,6 +119,52 @@ function calculateEstimate() {
   setText("deliveryTotal", currency.format(freight));
   setText("taxTotal", currency.format(taxTotal));
   setText("pallets", whole.format(bundleCount));
+
+  return {
+    productType,
+    netWallArea,
+    primaryLabel,
+    primaryUnits,
+    supportLabel,
+    supportUnits,
+    fillLabel,
+    fillCost,
+    markupTotal,
+    freight,
+    taxTotal,
+    total: subtotal,
+    range: `${currency.format(lowRange)} - ${currency.format(highRange)}`,
+    bundles: bundleCount,
+  };
+}
+
+function captureLead() {
+  if (!estimateForm) return;
+  const estimate = calculateEstimate();
+  const data = new FormData(estimateForm);
+  const lead = {
+    createdAt: new Date().toISOString(),
+    contactName: data.get("contactName") || "",
+    company: data.get("company") || "",
+    email: data.get("leadEmail") || "",
+    phone: data.get("leadPhone") || "",
+    jobLocation: data.get("jobLocation") || "",
+    projectName: data.get("projectName") || "",
+    estimate,
+  };
+  try {
+    const leads = JSON.parse(window.localStorage?.getItem("legacyBlockLeads") || "[]");
+    leads.unshift(lead);
+    window.localStorage?.setItem("legacyBlockLeads", JSON.stringify(leads.slice(0, 25)));
+  } catch {
+    // Some embedded browser contexts disable local storage; the visible confirmation still matters.
+  }
+
+  const status = estimateForm.querySelector(".lead-status");
+  if (status) {
+    status.textContent =
+      "Quote request captured locally. Connect a CRM endpoint to send this lead to Legacy Block automatically.";
+  }
 }
 
 if (estimateForm) {
@@ -125,7 +172,8 @@ if (estimateForm) {
   estimateForm.addEventListener("change", calculateEstimate);
   estimateForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    calculateEstimate();
+    captureLead();
   });
+  estimateForm.querySelector(".quote-submit")?.addEventListener("click", captureLead);
   calculateEstimate();
 }
