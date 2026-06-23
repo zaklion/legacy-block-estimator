@@ -79,79 +79,19 @@ p {
 }
 
 .legacy-mark {
-  display: inline-flex;
-  gap: 14px;
-  align-items: center;
+  display: inline-block;
   margin-bottom: 36px;
-  border: 1px solid #aab4bf;
-  border-left: 6px solid var(--orange);
+  border: 1px solid rgba(17, 24, 32, 0.16);
   border-radius: 3px;
-  padding: 12px 16px 12px 12px;
-  background: #fff;
-  box-shadow: 0 16px 34px rgba(17, 24, 32, 0.1);
-  color: var(--navy);
-  line-height: 1;
+  padding: 8px;
+  background: #050505;
+  box-shadow: 0 18px 40px rgba(17, 24, 32, 0.16);
 }
 
-.legacy-icon {
-  position: relative;
+.legacy-logo {
   display: block;
-  width: 44px;
-  height: 36px;
-  border: 2px solid var(--navy);
-  background:
-    linear-gradient(90deg, rgba(17, 24, 32, 0.12) 1px, transparent 1px) 50% 0 / 50% 100%,
-    linear-gradient(180deg, #f7f9fa 0%, #c9d2d9 100%);
-  box-shadow: inset 0 -4px 0 rgba(31, 79, 122, 0.18);
-}
-
-.legacy-icon span {
-  display: none;
-}
-
-.legacy-icon::before,
-.legacy-icon::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  width: 11px;
-  height: 17px;
-  border: 1px solid rgba(17, 24, 32, 0.5);
-  background: #f6f4ee;
-  box-shadow: inset 0 3px 0 rgba(17, 24, 32, 0.1);
-}
-
-.legacy-icon::before {
-  left: 8px;
-}
-
-.legacy-icon::after {
-  right: 8px;
-}
-
-.legacy-wordmark {
-  display: grid;
-  gap: 6px;
-}
-
-.legacy-wordmark strong,
-.legacy-wordmark span {
-  display: block;
-  letter-spacing: 0;
-}
-
-.legacy-wordmark strong {
-  color: var(--navy);
-  font-size: 1.55rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.legacy-wordmark span {
-  color: var(--brand-blue);
-  font-size: 0.73rem;
-  font-weight: 800;
-  text-transform: uppercase;
+  width: min(310px, 70vw);
+  height: auto;
 }
 
 h1 {
@@ -1036,16 +976,11 @@ footer a {
 
   .legacy-mark {
     max-width: 100%;
-    gap: 11px;
-    padding-right: 12px;
+    padding: 7px;
   }
 
-  .legacy-wordmark strong {
-    font-size: 1.25rem;
-  }
-
-  .legacy-wordmark span {
-    font-size: 0.66rem;
+  .legacy-logo {
+    width: min(260px, 76vw);
   }
 
   .hero-inner {
