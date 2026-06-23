@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Legacy Block | Industrial CMU and CICF Quote Tool</title>
+    <title>Legacy Block | Get a CMU or CICF Material Quote</title>
     <meta
       name="description"
-      content="Professional Legacy Block quote intake for CMU block and CICF materials, freight, tax, and profit markup."
+      content="Request a fast Legacy Block quote for CMU block or CICF materials. Enter your wall details and get a starting material estimate."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,34 +32,34 @@
             </div>
 
             <h1>
-              Industrial CMU &amp;<br />
-              <span class="blue">CICF Quotes</span><br />
-              Built for<br />
-              Follow-Up
+              Get CMU &amp;<br />
+              <span class="blue">CICF Pricing</span><br />
+              Without the<br />
+              Guesswork
             </h1>
 
             <p class="hero-lede">
-              A professional lead intake and material estimate tool for CMU block, CICF forms,
-              freight, tax, and Legacy Block's profit margin.
+              Tell Legacy Block what you are building and get a fast starting price for block,
+              insulated concrete forms, and the materials needed to move your project forward.
             </p>
 
             <div class="guarantees" aria-label="Guarantees">
-              <span>CMU block estimates</span>
-              <span>CICF material takeoffs</span>
-              <span>Profit markup included</span>
+              <span>Fast material pricing</span>
+              <span>CMU and CICF options</span>
+              <span>Direct Legacy Block follow-up</span>
             </div>
 
-            <div class="flat-fee">Capture the lead, price the wall, and hand sales a quote-ready summary.</div>
+            <div class="flat-fee">Enter a few wall details and Legacy Block will help turn them into a real material quote.</div>
           </div>
 
           <aside class="form-wrap" aria-label="Legacy Block quote request form">
-            <div class="pill pill-fast">Lead Intake</div>
+            <div class="pill pill-fast">Fast Quote</div>
             <div class="pill pill-ai">Legacy Block</div>
 
             <div class="form-card">
               <header>
                 <h2>Start a Material Quote</h2>
-                <p>Collect the customer first, then complete the wall takeoff below.</p>
+                <p>Get a quick starting estimate, then Legacy Block can confirm the best option for your job.</p>
               </header>
 
               <form class="demo-form">
@@ -85,13 +85,13 @@
                 </label>
 
                 <div class="progress-block">
-                  <span>50%</span>
+                  <span>Step 1 of 2</span>
                   <div class="progress-track" aria-hidden="true">
                     <div></div>
                   </div>
                 </div>
 
-                <button type="submit">Start quote</button>
+                <button type="submit">Get my quote</button>
                 <p class="form-status" role="status"></p>
               </form>
             </div>
@@ -102,39 +102,50 @@
       <section class="legacy-estimator" id="legacy-estimator">
         <div class="section-inner estimator-grid">
           <div class="estimator-copy">
-            <p class="kicker">Legacy Block quote intake</p>
-            <h2>Turn a lead into a CMU or CICF material quote.</h2>
+            <p class="kicker">Fast Legacy Block pricing</p>
+            <h2>Get a clearer material price before you order.</h2>
             <p>
-              This is designed as a sales tool: capture who the customer is, collect wall scope,
-              calculate the material budget, and give Legacy Block a clean follow-up record.
+              Whether you are planning a foundation, retaining wall, basement, shop, or stock
+              order, this quote form gives Legacy Block the details needed to price the right
+              materials quickly.
             </p>
             <div class="formula-card">
-              <strong>Quote workflow</strong>
-              <span>Lead details = contact + company + job location</span>
-              <span>Net wall area = length × height - openings</span>
-              <span>CMU units = net area ÷ block face area + waste</span>
-              <span>CICF units = net area ÷ form face area + waste</span>
-              <span>Total = product + mortar/foam + grout/concrete + profit bump + delivery/tax</span>
+              <strong>How it works</strong>
+              <span>Share your contact details and job location.</span>
+              <span>Choose CMU block or CICF forms.</span>
+              <span>Enter the wall size and openings.</span>
+              <span>Review a starting material estimate instantly.</span>
+              <span>Legacy Block follows up with final pricing and availability.</span>
             </div>
           </div>
 
           <div class="estimator-app" aria-label="Legacy Block estimator">
             <div class="estimator-header">
               <div>
-                <span>Quote Console</span>
-                <h3>Legacy Block Material Intake</h3>
+                <span>Quote Request</span>
+                <h3>Your Project Details</h3>
               </div>
-              <strong>Sales-ready</strong>
+              <strong>Fast estimate</strong>
             </div>
             <form class="estimate-form">
+              <input name="waste" type="hidden" value="8" />
+              <input name="markup" type="hidden" value="18" />
+              <input name="unitPrice" type="hidden" value="3.25" />
+              <input name="freight" type="hidden" value="450" />
+              <input name="taxRate" type="hidden" value="0" />
+              <input name="range" type="hidden" value="10" />
+              <input name="mortarPrice" type="hidden" value="13.50" />
+              <input name="groutRate" type="hidden" value="1.15" />
+              <input name="formArea" type="hidden" value="5.33" />
+              <input name="concretePrice" type="hidden" value="165" />
               <div class="form-section-title">
                 <span>01</span>
-                Lead details
+                Your contact info
               </div>
               <div class="field-row wide">
                 <label>
                   Contact name
-                  <input name="contactName" autocomplete="name" placeholder="Customer name" />
+                  <input name="contactName" autocomplete="name" placeholder="Customer name" required />
                 </label>
                 <label>
                   Company
@@ -144,15 +155,15 @@
               <div class="field-row">
                 <label>
                   Email
-                  <input name="leadEmail" type="email" autocomplete="email" placeholder="name@company.com" />
+                  <input name="leadEmail" type="email" autocomplete="email" placeholder="name@company.com" required />
                 </label>
                 <label>
                   Phone
-                  <input name="leadPhone" type="tel" autocomplete="tel" placeholder="(555) 000-0000" />
+                  <input name="leadPhone" type="tel" autocomplete="tel" placeholder="(555) 000-0000" required />
                 </label>
                 <label>
                   Job location
-                  <input name="jobLocation" placeholder="City, State" />
+                  <input name="jobLocation" placeholder="City, State" required />
                 </label>
               </div>
 
@@ -170,52 +181,22 @@
                 </label>
                 <label>
                   Project name
-                  <input name="projectName" value="Legacy Block quick quote" />
+                  <input name="projectName" placeholder="Example: basement walls or shop addition" required />
                 </label>
               </div>
 
               <div class="field-row">
                 <label>
                   Wall length, ft
-                  <input name="length" type="number" min="1" step="1" value="120" />
+                  <input name="length" type="number" min="1" step="1" value="120" required />
                 </label>
                 <label>
                   Wall height, ft
-                  <input name="height" type="number" min="1" step="0.5" value="8" />
+                  <input name="height" type="number" min="1" step="0.5" value="8" required />
                 </label>
                 <label>
                   Openings, sq ft
                   <input name="openings" type="number" min="0" step="1" value="96" />
-                </label>
-              </div>
-
-              <div class="field-row">
-                <label>
-                  Waste factor, %
-                  <input name="waste" type="number" min="0" max="25" step="1" value="8" />
-                </label>
-                <label>
-                  Profit bump, %
-                  <input name="markup" type="number" min="0" max="100" step="1" value="18" />
-                </label>
-                <label>
-                  Unit price, $
-                  <input name="unitPrice" type="number" min="0" step="0.01" value="3.25" />
-                </label>
-              </div>
-
-              <div class="field-row">
-                <label>
-                  Freight/delivery, $
-                  <input name="freight" type="number" min="0" step="25" value="450" />
-                </label>
-                <label>
-                  Tax rate, %
-                  <input name="taxRate" type="number" min="0" max="20" step="0.1" value="0" />
-                </label>
-                <label>
-                  Quote cushion, %
-                  <input name="range" type="number" min="0" max="25" step="1" value="10" />
                 </label>
               </div>
 
@@ -228,38 +209,22 @@
                     <option value="12x8x16">12x8x16</option>
                   </select>
                 </label>
-                <label>
-                  Mortar bag price, $
-                  <input name="mortarPrice" type="number" min="0" step="0.01" value="13.50" />
-                </label>
-                <label>
-                  Grout allowance, $/sq ft
-                  <input name="groutRate" type="number" min="0" step="0.01" value="1.15" />
-                </label>
               </div>
 
               <div class="field-row cicf-fields">
                 <label>
-                  Form face area, sq ft
-                  <input name="formArea" type="number" min="1" step="0.25" value="5.33" />
-                </label>
-                <label>
                   Concrete core, in
                   <input name="coreThickness" type="number" min="2" step="0.5" value="6" />
                 </label>
-                <label>
-                  Concrete price, $/yd³
-                  <input name="concretePrice" type="number" min="0" step="1" value="165" />
-                </label>
               </div>
 
-              <button class="quote-submit" type="button">Submit quote request</button>
+              <button class="quote-submit" type="button">Send my quote request</button>
               <p class="lead-status" role="status"></p>
             </form>
 
             <div class="estimate-output" aria-live="polite">
               <div>
-                <span class="output-label">Estimated materials total</span>
+                <span class="output-label">Starting material estimate</span>
                 <strong id="estimateTotal">$0</strong>
                 <p id="estimateRange">Range: $0 - $0</p>
               </div>
@@ -282,10 +247,6 @@
                   <dd id="fillUnits">$0</dd>
                 </div>
                 <div>
-                  <dt>Profit bump</dt>
-                  <dd id="markupTotal">$0</dd>
-                </div>
-                <div>
                   <dt>Pallets / bundles</dt>
                   <dd id="pallets">0</dd>
                 </div>
@@ -300,9 +261,8 @@
               </dl>
 
               <p class="estimate-note">
-                Static prototype: quote requests are prepared in-browser and saved locally for
-                review. Connect this form to HubSpot, Airtable, Google Sheets, or a CRM endpoint to
-                send leads directly to Legacy Block.
+                This instant number is a planning estimate. Legacy Block will review your details,
+                confirm product availability, delivery needs, and final pricing before you order.
               </p>
             </div>
           </div>
@@ -312,10 +272,10 @@
       <section class="why-section">
         <div class="section-inner">
           <div class="section-heading">
-            <h2>Why Use the Legacy Block Estimator?</h2>
+            <h2>Why Request a Quote from Legacy Block?</h2>
             <p>
-              CMU and CICF pricing gets messy fast. This estimator keeps the starting quote
-              transparent so Legacy Block can qualify the job and follow up with real pricing.
+              CMU and CICF projects can get expensive when quantities are unclear. Legacy Block
+              helps you understand the material range early, so you can plan with more confidence.
             </p>
           </div>
 
@@ -327,11 +287,11 @@
                   <path d="M12 7v6l4 2"></path>
                 </svg>
               </div>
-              <strong>Minutes</strong>
-              <h3>Faster Material Takeoffs</h3>
+              <strong>Quick start</strong>
+              <h3>Know Your Material Range Earlier</h3>
               <p>
-                Convert wall dimensions into block or form counts without rebuilding a spreadsheet
-                for every early-stage customer conversation.
+                Enter basic wall dimensions and get a starting estimate before you spend days
+                waiting on a back-and-forth quote process.
               </p>
             </article>
 
@@ -344,9 +304,9 @@
                   <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                 </svg>
               </div>
-              <strong>Cleaner quotes</strong>
-              <h3>Show the Profit Bump</h3>
-              <p>Keep material cost, delivery, tax, and Legacy Block's profit markup visible.</p>
+              <strong>Real follow-up</strong>
+              <h3>Talk to Someone Who Knows the Product</h3>
+              <p>Legacy Block can review your project, answer product questions, and help confirm what you need.</p>
             </article>
           </div>
         </div>
@@ -355,40 +315,38 @@
       <section class="features-section">
         <div class="section-inner feature-grid">
           <div class="feature-copy">
-            <h2>Everything Legacy Block Needs for Early Quotes</h2>
+            <h2>Built for Real CMU and CICF Projects</h2>
             <p>
-              The calculator is built around the fields that matter before a full bid package:
-              wall area, openings, waste, product pricing, freight, tax, and markup.
+              The form focuses on the details that matter most for an early material quote, without
+              making you upload a full plan set just to start the conversation.
             </p>
             <ul>
-              <li>CMU and CICF product modes</li>
-              <li>Openings and waste factor</li>
-              <li>Editable unit pricing</li>
-              <li>Freight and delivery allowance</li>
-              <li>Tax rate support</li>
-              <li>Profit markup field</li>
-              <li>Pallet or bundle estimates</li>
-              <li>Budget range output</li>
+              <li>CMU block and CICF options</li>
+              <li>Wall length, height, and openings</li>
+              <li>Starting material quantity estimate</li>
+              <li>Delivery-aware quote review</li>
+              <li>Budget range before final order</li>
+              <li>Direct Legacy Block follow-up</li>
             </ul>
           </div>
 
           <div class="dashboard-card">
             <div class="dashboard-head">
-              <h3>Quote Dashboard</h3>
-              <p>Sample Legacy Block quote pipeline</p>
+              <h3>Common Quote Requests</h3>
+              <p>Materials Legacy Block can help price</p>
             </div>
             <div class="dashboard-body">
               <div>
                 <span>CMU Retaining Wall</span>
-                <strong class="status complete">Completed</strong>
+                <strong class="status complete">CMU</strong>
               </div>
               <div>
                 <span>CICF Basement Package</span>
-                <strong class="status active">In Progress</strong>
+                <strong class="status active">CICF</strong>
               </div>
               <div>
                 <span>Dealer Stock Order</span>
-                <strong class="status review">Review</strong>
+                <strong class="status review">Supply</strong>
               </div>
             </div>
           </div>
@@ -398,37 +356,37 @@
       <section class="reviews-section">
         <div class="section-inner">
           <div class="section-heading">
-            <h2>Built for Legacy Block Conversations</h2>
-            <p>Use these outputs as starter estimates before confirming final job conditions.</p>
+            <h2>Make the First Quote Conversation Easier</h2>
+            <p>Start with the basics, then Legacy Block can help dial in the details.</p>
           </div>
 
           <div class="review-grid">
             <article>
               <div class="stars">★★★★★</div>
               <p>
-                "A customer can give wall length, height, and openings over the phone and get a
-                realistic CMU material starting point before a full quote."
+                "Know whether the material range fits your project before you spend more time
+                chasing suppliers."
               </p>
-              <h3>Phone quote</h3>
-              <span>Sales workflow</span>
+              <h3>Plan faster</h3>
+              <span>Early budgeting</span>
             </article>
             <article>
               <div class="stars">★★★★★</div>
               <p>
-                "The profit bump is visible, so Legacy Block can adjust margin without changing the
-                base material assumptions."
+                "Send enough information for Legacy Block to review the job and respond with a
+                more accurate quote."
               </p>
-              <h3>Markup control</h3>
-              <span>Owner workflow</span>
+              <h3>Less guessing</h3>
+              <span>Quote review</span>
             </article>
             <article>
               <div class="stars">★★★★★</div>
               <p>
-                "CMU and CICF can share the same intake flow while using different product and fill
-                assumptions."
+                "Compare CMU and CICF paths from one simple form instead of starting over with
+                every supplier."
               </p>
-              <h3>Product flexibility</h3>
-              <span>Estimator workflow</span>
+              <h3>More options</h3>
+              <span>Material planning</span>
             </article>
           </div>
         </div>
@@ -437,18 +395,18 @@
       <section class="cta-section">
         <div class="section-inner cta-grid">
           <div>
-            <h2>Ready to Price a Legacy Block Job?</h2>
+            <h2>Ready to Get a Legacy Block Quote?</h2>
             <p>
-              Start with a quick wall takeoff, adjust the profit bump, and use the result as a
-              budget quote before final sales review.
+              Share the basics now and get a starting estimate you can use to decide the next step
+              on your project.
             </p>
             <ul>
-              <li>CMU and CICF modes</li>
-              <li>Visible profit markup</li>
-              <li>Editable quote cushion</li>
+              <li>Fast starting estimate</li>
+              <li>CMU and CICF options</li>
+              <li>Legacy Block follow-up</li>
             </ul>
           </div>
-          <a href="#legacy-estimator" class="secondary-form-link">Open Legacy Block Estimator</a>
+          <a href="#legacy-estimator" class="secondary-form-link">Get My Quote</a>
         </div>
       </section>
     </main>
@@ -457,28 +415,28 @@
       <div class="section-inner footer-grid">
         <div>
           <h2>Legacy Block</h2>
-          <p>CMU block and CICF materials with a practical quick-quote estimator.</p>
+          <p>CMU block and CICF materials with fast quote support.</p>
         </div>
         <div>
           <h3>Products</h3>
           <a href="#legacy-estimator">CMU Block</a>
           <a href="#legacy-estimator">CICF Forms</a>
           <a href="#legacy-estimator">Freight Quotes</a>
-          <a href="#legacy-estimator">Material Takeoffs</a>
+          <a href="#legacy-estimator">Material Quotes</a>
         </div>
         <div>
-          <h3>Quote Inputs</h3>
+          <h3>Quote Details</h3>
           <a href="#legacy-estimator">Wall Dimensions</a>
           <a href="#legacy-estimator">Openings</a>
-          <a href="#legacy-estimator">Waste Factor</a>
-          <a href="#legacy-estimator">Profit Bump</a>
+          <a href="#legacy-estimator">Project Location</a>
+          <a href="#legacy-estimator">Material Range</a>
         </div>
         <div>
           <h3>Company</h3>
           <a href="#top">Legacy Block</a>
-          <a href="#legacy-estimator">Estimator</a>
-          <a href="#legacy-estimator">Sales Tool</a>
-          <a href="#legacy-estimator">Quote Review</a>
+          <a href="#legacy-estimator">Get a Quote</a>
+          <a href="#legacy-estimator">CMU Pricing</a>
+          <a href="#legacy-estimator">CICF Pricing</a>
         </div>
       </div>
       <p class="copyright">© 2026 Legacy Block. All rights reserved.</p>

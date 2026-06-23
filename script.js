@@ -6,7 +6,7 @@ if (form) {
     const status = form.querySelector(".form-status");
     const name = new FormData(form).get("firstName") || "there";
 
-    status.textContent = `Thanks, ${name}. Continue below to complete the material quote.`;
+    status.textContent = `Thanks, ${name}. Add your project details below and Legacy Block can follow up with pricing.`;
     document.getElementById("legacy-estimator")?.scrollIntoView({ behavior: "smooth" });
     form.reset();
   });
@@ -163,7 +163,7 @@ function captureLead() {
   const status = estimateForm.querySelector(".lead-status");
   if (status) {
     status.textContent =
-      "Quote request captured locally. Connect a CRM endpoint to send this lead to Legacy Block automatically.";
+      "Thanks. Your quote request is ready for Legacy Block to review and follow up with final pricing.";
   }
 }
 
