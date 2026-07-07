@@ -32,6 +32,8 @@ const setText = (id, value) => {
   }
 };
 
+const formatCurrencyValue = (value) => currency.format(value || 0);
+
 function calculateEstimate() {
   if (!estimateForm) return;
 
@@ -129,41 +131,86 @@ function calculateEstimate() {
     supportUnits,
     fillLabel,
     fillCost,
+    fillCostFormatted: formatCurrencyValue(fillCost),
     markupTotal,
+    markupTotalFormatted: formatCurrencyValue(markupTotal),
     freight,
+    freightFormatted: formatCurrencyValue(freight),
     taxTotal,
+    taxTotalFormatted: formatCurrencyValue(taxTotal),
     total: subtotal,
+    totalFormatted: formatCurrencyValue(subtotal),
     range: `${currency.format(lowRange)} - ${currency.format(highRange)}`,
     bundles: bundleCount,
   };
 }
 
-function captureLead() {
+async function captureLead() {
   if (!estimateForm) return;
   const estimate = calculateEstimate();
   const data = new FormData(estimateForm);
   const lead = {
     createdAt: new Date().toISOString(),
+    website: data.get("website") || "",
     contactName: data.get("contactName") || "",
     company: data.get("company") || "",
     email: data.get("leadEmail") || "",
     phone: data.get("leadPhone") || "",
     jobLocation: data.get("jobLocation") || "",
     projectName: data.get("projectName") || "",
-    estimate,
+    productType: data.get("productType") || "",
+    length: data.get("length") || "",
+    height: data.get("height") || "",
+    openings: data.get("openings") || "",
+    blockSize: data.get("blockSize") || "",
+    coreThickness: data.get("coreThickness") || "",
   };
-  try {
-    const leads = JSON.parse(window.localStorage?.getItem("legacyBlockLeads") || "[]");
-    leads.unshift(lead);
-    window.localStorage?.setItem("legacyBlockLeads", JSON.stringify(leads.slice(0, 25)));
-  } catch {
-    // Some embedded browser contexts disable local storage; the visible confirmation still matters.
-  }
 
   const status = estimateForm.querySelector(".lead-status");
+  const button = estimateForm.querySelector(".quote-submit");
   if (status) {
-    status.textContent =
-      "Thanks. Your quote request is ready for Legacy Block to review and follow up with final pricing.";
+    status.textContent = "Sending your quote request...";
+  }
+  if (button) {
+    button.disabled = true;
+  }
+
+  try {
+    const response = await fetch("./quote-request.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ lead, estimate }),
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) {
+      throw new Error(result.message || "Unable to send the quote request right now.");
+    }
+
+    try {
+      const leads = JSON.parse(window.localStorage?.getItem("legacyBlockLeads") || "[]");
+      leads.unshift({ ...lead, estimate });
+      window.localStorage?.setItem("legacyBlockLeads", JSON.stringify(leads.slice(0, 25)));
+    } catch {
+      // Email delivery is the source of truth; local storage is only a visitor-side convenience.
+    }
+
+    if (status) {
+      status.textContent =
+        result.message || "Thanks. Your quote request has been sent to Legacy Block.";
+    }
+    estimateForm.reset();
+    calculateEstimate();
+  } catch {
+    if (status) {
+      status.textContent =
+        "Sorry, your request could not be sent. Please call Legacy Block or try again in a moment.";
+    }
+  } finally {
+    if (button) {
+      button.disabled = false;
+    }
   }
 }
 
@@ -174,6 +221,5 @@ if (estimateForm) {
     event.preventDefault();
     captureLead();
   });
-  estimateForm.querySelector(".quote-submit")?.addEventListener("click", captureLead);
   calculateEstimate();
 }
